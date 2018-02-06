@@ -5,10 +5,8 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="${contextPath}/css/style2.css" rel="stylesheet">
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<title>device side panel</title>
+
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script>
 	// Get the modal
@@ -47,7 +45,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	crossorigin="anonymous"></script>
-
 <style>
 .form-style-8 {
 	font-family: 'Roboto Medium', monotype, sans;
@@ -62,39 +59,55 @@
 	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
 	-webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
 }
+
+.form-style-8 input[type="text"], .form-style-8 select {
+	box-sizing: round-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-top: -30px;
+	font: 16px Arial, 'Roboto Medium', arial, sans;
+	height: 35px;
+	margin-right: 65px;
+	padding: 8px;
+	width: 60%;
+}
 </style>
+
+<title>sidepanel</title>
 </head>
 <body>
 	<div class="after-box">
 		<table border="0" width="100%" bgcolor="yellow">
 			<tr>
 				<th>SCREENID:SCDEV01</th>
-				<th>DEVICE SIDEPANEL</th>
+				<th>MASTER SIDEPANEL:</th>
 				<th>USER:</th>
 				<th>Date:<span id="date"></span></th>
 			</tr>
 		</table>
 	</div>
 	<div class="form-style-8">
-		<form>
+		<form action="" method="post">
 			<table>
 				<tr>
-					<td><b>ORG ID</b> <input type="text" name="orgid" id="orgid" /></td>
-
-					<td><b>BRANCH ID </b> <input type="text" name="branchid" /></td>
+					<td><label><b>SPItem ID</b></label> <select style="">
+							<option value="orgid">orgid</option>
+							<option value="deviceid">devid</option>
+					</select></td>
+					<td><label><b>SPItem Name</b></label> <select style="">
+							<option value="deviceid">devid</option>
+					</select></td>
 				</tr>
 				<tr>
-					<td><b>DEVICE ID </b> <input type="text" name="deviceid" /></td>
-
-					<td><b>SPItem ID </b> <input type="text" name="spitemid" /></td>
-				</tr>
-				<tr>
-					<td><b>SPItem Name</b> <input type="text" name="spitemname" /></td>
-					<td><b>SPItem Status </b> <input type="text" name="spstatus" /></td>
-
+					<td><b>Status</b> <input type="text" name="devicestatus" /></td>
 				</tr>
 			</table>
-			<input type="button" id="btnsearch" value="SEARCH"
+			<input type="button" id="btnfetch" value="FETCH"
 				style="margin-left: 85px;" /> <input type="button" value="CANCEL"
 				style="margin-left: 65px;" />
 		</form>
@@ -108,39 +121,34 @@
 			</tr>
 		</table>
 	</div>
-
 	<div class="result-box">
 		<table border="2" width="100%">
 			<tr>
-				<th>Device Id</th>
-				<th>SPItemID</th>
-				<th>Master(Y)</th>
-				<th>MasterID</th>
-				<th>Sequence</th>
+				<th>key</th>
+				<th>Ref</th>
+				<th>Seq.NO</th>
 				<th>Name</th>
 				<th>File</th>
 				<th>STATUS</th>
 			</tr>
+
 			<tr align="center">
 				<td>1</td>
-				<td>sp123</td>
-				<td>Y</td>
-				<td>spmas123</td>
-				<td>123</td>
 				<td>digy</td>
-				<td>exampl.docx</td>
+				<td>dev123</td>
+				<td>digy</td>
+				<td>example.doc</td>
 				<td>active</td>
 			</tr>
 
 			<tr align="center">
 				<td>2</td>
-				<td>sp456</td>
-				<td>Y</td>
-				<td>spmas456</td>
-				<td>456</td>
 				<td>promo</td>
-				<td>examp2.docx</td>
+				<td>dev1234</td>
+				<td>promo</td>
+				<td>example1.doc</td>
 				<td>inactive</td>
+			</tr>
 			</tr>
 		</table>
 	</div>
@@ -152,24 +160,18 @@
 
 
 			<div class="form-style-9">
-				<h2>ADD NEW PANNEL</h2>
+				<h2>ADD NEW PANEL</h2>
 				<form>
 					<table>
 						<tr>
-							<td>ORG ID <input type="text" name="orgid" /></td>
+							<td>SP ITEM id <input type="text" name="deviceid" /></td>
 
-							<td>DEVICE ID <input type="text" name="deviceid" /></td>
-						</tr>
-						<tr>
-							<td>SP ITEM KEY <input type="text" name="spitemkey" /></td>
-
-							<td>SP ITEM MASTER(Y/N) <input type="text"
-								name="spitemmaster" /></td>
-						</tr>
-						<tr>
 							<td>SP ITEM NAME <input type="text" name="spitemname" /></td>
+						</tr>
+						<tr>
+							<td>SP ITEM IMAGE <input type="text" name="spitemimage" /></td>
 
-							<td>SP ITEM REMARKS) <input type="text" name="spitemremarks" /></td>
+							<td>SP ITEM REMARKS <input type="text" name="spitemremarks" /></td>
 						</tr>
 						<tr>
 							<td>SP ITEM STATUS <input type="text" name="spitemstatus" /></td>
@@ -189,6 +191,5 @@
 		</div>
 
 	</div>
-
 </body>
 </html>
