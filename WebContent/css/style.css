@@ -1,0 +1,388 @@
+{
+    box-sizing: border-box;
+}
+ .body{
+    margin:0px;
+}
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    padding:-10px;
+    margin:-200px;
+    line-height:66px;
+    text-align:center;
+    height:20px;
+}
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    padding:0px;
+    text-align:center;
+    height:5px;
+    margin:10px;
+}
+.h1 {
+
+	 color:black;
+	 margin:0px;
+     padding:1px;
+     width:1497px;
+     font:monotype;
+     height:45px;
+     
+}
+ .h1 a {
+	display : block;
+	height : 113px;
+	text-indent : -9999px; 
+}
+
+/****-----start-body----****/
+body{
+	background:url(../images/bg.jpg)  no-repeat center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+ 	background-size: cover;
+ 	position:relative;
+ 	font-family: 'Open Sans', sans-serif;
+
+}
+.login-form {
+	background: url(../images/bgf.png) no-repeat 100% 0%;
+	background-size: 100%;
+	width:37%;
+	height:105%;
+	margin:5% auto 4% auto;
+ 	position: relative;
+}
+.login-form h1{
+	text-align:left;
+	color: #fff;
+	font-size:1.8em;
+	font-weight:500;
+	font-family: 'Open Sans', sans-serif;
+	position:absolute;
+	top:7%;
+	left:11%;
+	margin:-1px 0;
+} 
+.login-form h2 a{
+	text-align:right;
+	color: #fff;
+	font-size:1.15em;
+	font-weight:500;
+	font-family: 'Open Sans', sans-serif;
+	position:absolute;
+	top:9.5%;
+	right:11%;
+	margin:34px 0;
+} 
+form {
+	padding:32% 3em;
+}
+form li{
+	border:1px solid #FFC600;
+	list-style:none;
+	margin-bottom:16px;
+	width:100%;
+	background: #FFC600;
+
+}
+
+.icon{
+	background:url(../images/icons.png)  no-repeat 0px 0px;
+	height:40px;
+	width:40px;
+	display: block;
+	float:left;
+	margin:5px -11px 0px 0px
+}
+
+.user{
+	background: url(../images/icons.png) no-repeat 7px 1px;
+	
+}
+.lock{
+	background: url(../images/icons.png) no-repeat -31px 2px;
+}
+.arrow{
+	background: url(../images/icons.png) no-repeat -62px 11px;
+	position: absolute;
+}
+input[type="text"], input[type="password"] {
+	font-family: 'Open Sans', sans-serif;
+	width:60%;
+	padding: 0.5em 2em 0.5em 1em;
+	color: #fff;
+	font-size:20px;
+	outline: none;
+	background: none;
+	border:none;
+}
+
+
+input[type="submit"]
+{
+	float:auto;
+	font-size:18px;
+	display: inline-block;
+	font-weight:600;
+	color: #fff;
+	transition: 0.1s all;
+	-webkit-transition: 0.1s all;
+	-moz-transition: 0.1s all;
+	-o-transition: 0.1s all;
+	cursor: pointer;
+	outline: none;
+	padding:15px 10px;
+	margin-top:10px;
+	font-family: 'Open Sans', sans-serif;
+	background: #222;
+	width:45%;
+	border:1px solid #222;
+}
+
+input[type="submit"]:hover{
+	background: #FFC600;
+	border:1px solid #FFC600;
+}
+.forgot{
+	margin:30px 7px;
+}
+.forgot h3 a{
+	color:#fff;
+	font-size:15px;
+	font-family: 'Open Sans', sans-serif;	
+	float:right;
+	font-weight:600;
+	margin-top:19px;
+}
+.forgot h3 a:hover{
+	color:#FFC600;
+}
+ /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  line-height: 1.4;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 20px;
+}
+
+.site-content {
+  padding-top: 66px;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 66px;
+  line-height: 66px;
+  color: #fff;
+  background-color: #3f51b5;
+}
+
+.header__logo {
+  font-weight: 700;
+  padding: 0 25px;
+  float: left;
+}
+
+/* MENU */
+.menu {
+  float: left;
+}
+.menu a {
+  padding: 0 10px;
+}
+.menu a:hover {
+  color: #c5cae9;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 768px) {
+  .site-pusher,
+  .site-container {
+    height: 100%;
+  }
+
+  .site-container {
+    overflow: hidden;
+  }
+
+  .site-pusher {
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+
+  .site-content {
+    position: absolute;
+    top: 66px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .header {
+    position: static;
+  }
+
+  .header__icon {
+    position: relative;
+    display: block;
+    float: left;
+    width: 50px;
+    height: 66px;
+    cursor: pointer;
+  }
+  .header__icon:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 1rem;
+    height: 0;
+    top: 16px;
+    left: 15px;
+    -webkit-box-shadow: 0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff;
+    box-shadow: 0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff;
+  }
+
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #3849a2;
+    /*    overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;*/
+    width: 250px;
+    -webkit-transform: translateX(-250px);
+    transform: translateX(-250px);
+  }
+  .menu a {
+    display: block;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #3f51b5;
+  }
+
+  .with--sidebar .site-pusher {
+    -webkit-transform: translateX(250px);
+    transform: translateX(250px);
+  }
+  .with--sidebar .site-cache {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+body {
+  color: #5D5F63;
+  
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+.sidebar-toggle {
+  margin-left: -240px;
+}
+.sidebar {
+  width: 240px;
+  height: 100%;
+  background: #293949;
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+}
+.sidebar #leftside-navigation ul,
+.sidebar #leftside-navigation ul ul {
+  margin: -2px 0 0;
+  padding: 0;
+}
+.sidebar #leftside-navigation ul li {
+  list-style-type: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.sidebar #leftside-navigation ul li.active > a {
+  color: #1abc9c;
+}
+.sidebar #leftside-navigation ul li.active ul {
+  display: block;
+}
+.sidebar #leftside-navigation ul li a {
+  color: #aeb2b7;
+  text-decoration: none;
+  display: block;
+  padding: 18px 0 18px 25px;
+  font-size: 12px;
+  outline: 0;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+.sidebar #leftside-navigation ul li a:hover {
+  color: #1abc9c;
+}
+.sidebar #leftside-navigation ul li a span {
+  display: inline-block;
+}
+.sidebar #leftside-navigation ul li a i {
+  width: 20px;
+}
+.sidebar #leftside-navigation ul li a i .fa-angle-left,
+.sidebar #leftside-navigation ul li a i .fa-angle-right {
+  padding-top: 3px;
+}
+.sidebar #leftside-navigation ul ul {
+  display: none;
+}
+.sidebar #leftside-navigation ul ul li {
+  background: #23313f;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  border-bottom: none;
+}
+.sidebar #leftside-navigation ul ul li a {
+  font-size: 12px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  color: #aeb2b7;
+}
+
+  
