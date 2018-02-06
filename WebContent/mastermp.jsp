@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="${contextPath}/css/style2.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<title>device side panel</title>
+<title>master main panel</title>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script>
 	// Get the modal
@@ -69,7 +69,7 @@
 		<table border="0" width="100%" bgcolor="yellow">
 			<tr>
 				<th>SCREENID:SCDEV01</th>
-				<th>DEVICE SIDEPANEL</th>
+				<th>MASTER MAINPANEL</th>
 				<th>USER:</th>
 				<th>Date:<span id="date"></span></th>
 			</tr>
@@ -79,18 +79,15 @@
 		<form>
 			<table>
 				<tr>
-					<td><b>ORG ID</b> <input type="text" name="orgid" id="orgid" /></td>
+					<td><b>MPItemID </b> <input type="text" name="mpitemid"
+						id="orgid" /></td>
 
-					<td><b>BRANCH ID </b> <input type="text" name="branchid" /></td>
+					<td><b>MPItem Name </b> <input type="text" name="mpitemname" /></td>
 				</tr>
-				<tr>
-					<td><b>DEVICE ID </b> <input type="text" name="deviceid" /></td>
 
-					<td><b>SPItem ID </b> <input type="text" name="spitemid" /></td>
-				</tr>
 				<tr>
-					<td><b>SPItem Name</b> <input type="text" name="spitemname" /></td>
-					<td><b>SPItem Status </b> <input type="text" name="spstatus" /></td>
+					<td><b>MediaType</b> <input type="file" name="mpmediatype" /></td>
+					<td><b>MPDItem Status </b> <input type="text" name="mpstatus" /></td>
 
 				</tr>
 			</table>
@@ -112,22 +109,18 @@
 	<div class="result-box">
 		<table border="2" width="100%">
 			<tr>
-				<th>Device Id</th>
-				<th>SPItemID</th>
-				<th>Master(Y)</th>
-				<th>MasterID</th>
-				<th>Sequence</th>
+				<th>MPItem Key</th>
+				<th>MPItem Master ID</th>
 				<th>Name</th>
+				<th>Media Type</th>
 				<th>File</th>
-				<th>STATUS</th>
+				<th>Status</th>
 			</tr>
 			<tr align="center">
 				<td>1</td>
 				<td>sp123</td>
-				<td>Y</td>
 				<td>spmas123</td>
 				<td>123</td>
-				<td>digy</td>
 				<td>exampl.docx</td>
 				<td>active</td>
 			</tr>
@@ -135,15 +128,15 @@
 			<tr align="center">
 				<td>2</td>
 				<td>sp456</td>
-				<td>Y</td>
 				<td>spmas456</td>
 				<td>456</td>
-				<td>promo</td>
 				<td>examp2.docx</td>
 				<td>inactive</td>
 			</tr>
 		</table>
 	</div>
+
+
 	<div id="myModal" class="modal">
 		<!-- Modal content -->
 		<div class="modal-content">
@@ -152,29 +145,25 @@
 
 
 			<div class="form-style-9">
-				<h2>ADD NEW PANNEL</h2>
+				<h2>ADD NEW PANEL</h2>
 				<form>
 					<table>
 						<tr>
-							<td>ORG ID <input type="text" name="orgid" /></td>
+							<td>MPItem MasterID : <input type="text" name="mpitemmasterid" /></td>
 
-							<td>DEVICE ID <input type="text" name="deviceid" /></td>
+							<td>Name: <input type="text" name="name" /></td>
+						</tr>
+						
+						<tr>
+							<td>Media Type: <input type="file" name="mpmediatype" /></td>
+
+							<td>Media File Name : <input type="file" name="mpmediafilename" /></td>
 						</tr>
 						<tr>
-							<td>SP ITEM KEY <input type="text" name="spitemkey" /></td>
+							<td>MPITEM REMARKS: <input type="text"name="mpmitemremarks" /></td>
 
-							<td>SP ITEM MASTER(Y/N) <input type="text"
-								name="spitemmaster" /></td>
+							<td>MPD ITEM STATUS <input type="text" name="mpmitemstatus" /></td>
 						</tr>
-						<tr>
-							<td>SP ITEM NAME <input type="text" name="spitemname" /></td>
-
-							<td>SP ITEM REMARKS) <input type="text" name="spitemremarks" /></td>
-						</tr>
-						<tr>
-							<td>SP ITEM STATUS <input type="text" name="spitemstatus" /></td>
-						</tr>
-
 
 					</table>
 
