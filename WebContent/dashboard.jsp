@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>dashboard</title>
+<title>Dashboard</title>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="css/style2.css" rel="stylesheet">
@@ -87,9 +87,9 @@ div.scroll {
 	</div>
 	<div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 25%">
 		<h3 class="w3-bar-item">Menu</h3>
-		<a href="#" class="w3-bar-item w3-button" id="link1">DEVICE</a> <a
-			href="#" class="w3-bar-item w3-button" id="link2">DEVICE
-			PREFERENCES</a> <label class="dropdown-btn"><b>MASTER PANEL </b>
+		<a href="#" class="w3-bar-item w3-button" id="link1"><b>DEVICE</b></a> <a
+			href="#" class="w3-bar-item w3-button" id="link2"><b>DEVICE
+			PREFERENCES</b></a> <label class="dropdown-btn"><b>MASTER PANEL </b>
 			<i class="fa fa-caret-down"></i> </label>
 		<div class="dropdown-container">
 
@@ -109,11 +109,11 @@ div.scroll {
 			</ul>
 
 		</div>
-		<a href="#" class="w3-bar-item w3-button" id="link5">MESSAGES</a> <a
-			href="#" class="w3-bar-item w3-button">FEEDERS</a> <a href="#"
-			class="w3-bar-item w3-button">USER</a> <a href="#"
-			class="w3-bar-item w3-button">ROLES</a> <a href="#"
-			class="w3-bar-item w3-button">ROLE ACTION LINKAGE</a>
+		<a href="#" class="w3-bar-item w3-button" id="link7"><b>MESSAGES</b></a> <a
+			href="#" class="w3-bar-item w3-button"><b>FEEDERS</b></a> <a href="#"
+			class="w3-bar-item w3-button"><b>USER</b></a> <a href="#"
+			class="w3-bar-item w3-button"><b>ROLES</b></a> <a href="#"
+			class="w3-bar-item w3-button"><b>ROLE ACTION LINKAGE</b></a>
 
 	</div>
 	<div id="content">
