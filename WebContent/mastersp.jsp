@@ -3,6 +3,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
+
+<%@ page import="java.util.*"%>
+<%@ page import="java.sql.*"%>
+<%ResultSet resultset =null;%>
 <html>
 <head>
 <link href="${contextPath}/css/style2.css" rel="stylesheet">
@@ -78,7 +82,7 @@
 }
 </style>
 
-<title>sidepanel</title>
+<title>mastersidepanel</title>
 </head>
 <body>
 	<div class="after-box">
@@ -92,22 +96,20 @@
 		</table>
 	</div>
 	<div class="form-style-8">
-		<form action="" method="post">
+		<form action="Search" method="POST">
 			<table>
 				<tr>
-					<td><label><b>SPItem ID</b></label> <select style="">
-							<option value="orgid">orgid</option>
-							<option value="deviceid">devid</option>
-					</select></td>
-					<td><label><b>SPItem Name</b></label> <select style="">
-							<option value="deviceid">devid</option>
-					</select></td>
+					<td><label><b>SPItem ID</b></label> <input type="text"name="spmitemid" /> 
+				 </td>
+					<td><label><b>SPItem Name</b></label> <input type="text"
+						name="spmitemname" /> </td>
 				</tr>
 				<tr>
 					<td><b>Status</b> <input type="text" name="devicestatus" /></td>
 				</tr>
 			</table>
-			<input type="button" id="btnfetch" value="FETCH"
+
+			<input type="submit" name="submit" id="btnfetch" value="FETCH" onclick="CreateTableFromJSON()"
 				style="margin-left: 85px;" /> <input type="button" value="CANCEL"
 				style="margin-left: 65px;" />
 		</form>
@@ -121,35 +123,56 @@
 			</tr>
 		</table>
 	</div>
-	<div class="result-box">
+	 <div class="result-box">
 		<table border="2" width="100%">
 			<tr>
-				<th>key</th>
-				<th>Ref</th>
-				<th>Seq.NO</th>
-				<th>Name</th>
-				<th>File</th>
-				<th>STATUS</th>
+				<th>SPMItemkey</th>
+				<th>SPMItemOrganisationID</th>
+				<th>SPMItem</th>
+				<th>SPMItemName</th>
+				<th>SPMItemImageFile</th>
+				<th>SPMItemDirectory</th>
+				<th>SPMItemRemarks</th>
+				<th>SPMItemStatus</th>
+				<th>EDIT</th>
+				<th>DELETE</th>
 			</tr>
-
-			<tr align="center">
-				<td>1</td>
-				<td>digy</td>
-				<td>dev123</td>
-				<td>digy</td>
-				<td>example.doc</td>
-				<td>active</td>
+			
+			<%
+                int count = 0;
+                String color = "#F9EBB3";
+                if (request.getAttribute("empList") != null) {
+                    ArrayList al = (ArrayList) request.getAttribute("empList");
+                  /*  System.out.println(al);  */
+                    Iterator itr = al.iterator();
+                    while (itr.hasNext()) {
+ 
+                        if ((count % 2) == 0) {
+                            color = "#eeffee";
+                        }
+                        count++;
+                        ArrayList empList = (ArrayList) itr.next();
+            %>
+			<tr style="background-color:<%=color%>;">
+				<td><%=empList.get(0)%></td>
+				<td><%=empList.get(1)%></td>
+				<td><%=empList.get(2)%></td>
+				<td><%=empList.get(3)%></td>
+				<td><%=empList.get(4)%></td>
+				<td><%=empList.get(5)%></td>
+				<td><%=empList.get(6)%></td>
+				<td><%=empList.get(7)%></td>
+				<td><a href="#">Edit</a> </td>
+				<td><a href="#">DELETE</a> </td>
 			</tr>
-
-			<tr align="center">
-				<td>2</td>
-				<td>promo</td>
-				<td>dev1234</td>
-				<td>promo</td>
-				<td>example1.doc</td>
-				<td>inactive</td>
-			</tr>
-			</tr>
+			
+			
+			
+			<%
+                    }
+                }
+                
+            %>
 		</table>
 	</div>
 	<div id="myModal" class="modal">
@@ -191,5 +214,6 @@
 		</div>
 
 	</div>
+	
 </body>
 </html>

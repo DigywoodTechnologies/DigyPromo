@@ -92,7 +92,8 @@
 				</tr>
 			</table>
 			<input type="button" id="btnsearch" value="SEARCH"
-				style="margin-left: 85px;" /> <input type="button" value="CANCEL"
+				style="margin-left: 85px;" /> 
+				<input type="button" value="CANCEL"
 				style="margin-left: 65px;" />
 		</form>
 	</div>
@@ -157,7 +158,7 @@
 						<tr>
 							<td>Media Type: <input type="file" name="mpmediatype" /></td>
 
-							<td>Media File Name : <input type="file" name="mpmediafilename" /></td>
+							<td>Media File Name : <input type="text" name="mpmediafilename" /></td>
 						</tr>
 						<tr>
 							<td>MPITEM REMARKS: <input type="text"name="mpmitemremarks" /></td>

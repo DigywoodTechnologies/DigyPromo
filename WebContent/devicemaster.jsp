@@ -40,7 +40,7 @@
 			</tr>
 		</table>
 	</div>
-	<div class="form-style-8">
+	<div class="form-style-8" style="width:998px;">
 		<form>
 			<table>
 				<tr>
@@ -61,7 +61,7 @@
 			<table border="0" width="90%">
 				<tr>
 					<th><input type="button" id="btnsearch" value="SEARCH" /></th>
-					<th><input type="button" value="CANCEL" /></th>
+					<th><input type="button" value="CANCEL" style="margin-right:45px;"/></th>
 				</tr>
 			</table>
 		</form>
@@ -70,7 +70,7 @@
 		<table>
 			<tr>
 				<td><input type="button"
-					style="width: 1150px; font-size: 13pt; background-color: #34CACA; color: white; padding: 2px"
+					style="width: 150px; font-size: 13pt; background-color: #34CACA; color: white; padding: 2px"
 					align="middle" id="addbtn" value="ADD NEW" /></td>
 			</tr>
 		</table>
@@ -93,13 +93,13 @@
 				<td>active</td>
 			</tr>
 
-			<!-- <tr align="center">
+			 <tr align="center">
 				<td>4321</td>
 				<td>promo</td>
 				<td>rtnagar</td>
 				<td>hyderbad</td>
 				<td>inctive</td>
-			</tr> -->
+			</tr>
 		</table>
 	</div>
 
