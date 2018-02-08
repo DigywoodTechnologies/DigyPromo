@@ -19,7 +19,7 @@ public ArrayList retrieveOrderList(){
      int orderno = OrderBean.getOrderNo();
     try {
     currentCon = ConnectionManager.createConnection();
-    String searchQuery = "select * from f_b_orders where idF_B_Orders='" + orderno + "'";
+    String searchQuery = "select * from spmitem_master where SPMItemName='" + orderno + "'";
     java.sql.PreparedStatement ps = currentCon.prepareStatement(searchQuery);
     java.sql.ResultSet rs = ps.executeQuery();
         OrderBean OrderBean = null;

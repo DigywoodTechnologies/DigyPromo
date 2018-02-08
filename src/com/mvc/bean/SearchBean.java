@@ -5,7 +5,7 @@ public class SearchBean {
 	private static int SPMItemKey;
     private String SPMItemOrganisationID;
     private static String SPMItemID;
-    private String SPMItemName;
+    private  static String SPMItemName;
     private String SPMItemImageFile;
     private String SPMItemDirectory;
     private String SPMItemRemarks;

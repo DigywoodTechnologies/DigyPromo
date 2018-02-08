@@ -4,6 +4,9 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.sql.*;
 import java.util.*;
 
@@ -17,7 +20,6 @@ public class Search extends HttpServlet{
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-
 		Connection conn = null;
 		String url = "jdbc:mysql://localhost:3306/";
 		String dbName = "digypromo";
@@ -30,22 +32,22 @@ public class Search extends HttpServlet{
 		try {
 			Class.forName(driver).newInstance();
 			conn = DriverManager.getConnection(url+dbName,userName,password);
-			/*String  spmid  = request.getParameter("spmitemid");*/
-			String selectedValue=request.getParameter("lang");
-			System.out.println("Selected Value is : "+selectedValue);
+			String  spmid  = request.getParameter("spmitemid");
+			/*String selectedValue=request.getParameter("lang");*/
+			System.out.println("Selected Value is : "+spmid);
 			String  spmname  = request.getParameter("spmitemname");
 
 
 			ArrayList al=null;
 			ArrayList emp_list =new ArrayList();
 			String query = 
-					"select SPMItemKey,SPMItemOrganisationID , SPMItemID , SPMItemName , SPMItemImageFile , SPMItemDirectory,SPMItemRemarks ,SPMItemStatus from spmitem_master where SPMItemID='"+selectedValue+"' or  SPMItemName LIKE '%" + spmname + "%' ";
+					"select SPMItemKey,SPMItemOrganisationID , SPMItemID , SPMItemName , SPMItemImageFile , SPMItemDirectory,SPMItemRemarks ,SPMItemStatus from spmitem_master where SPMItemID='"+spmid+"' ";
 
-			System.out.println("query " + query);
+			/*System.out.println("query " + query);*/
 			st = conn.createStatement();
 			ResultSet  rs = st.executeQuery(query);
 
-
+			 JSONArray jsonArray = new JSONArray();
 			while(rs.next()){
 				al  = new ArrayList();
 				al.add(rs.getString(1));
@@ -57,16 +59,34 @@ public class Search extends HttpServlet{
 				al.add(rs.getString(7));
 				al.add(rs.getString(8));
 				emp_list.add(al);
-			}
-			request.setAttribute("empList",emp_list);
 
+
+				int total_rows = rs.getMetaData().getColumnCount();
+				for (int i = 0; i < total_rows; i++) {
+					JSONObject obj = new JSONObject();
+					obj.put(rs.getMetaData().getColumnLabel(i + 1)
+							.toLowerCase(), rs.getObject(i + 1));
+
+					jsonArray.put(obj);				
+					
+				}
+
+			}
+			
+					                    
+			System.out.println(jsonArray);
+			request.setAttribute("empList",emp_list);
+		   request.setAttribute("jsonString", jsonArray.toString());
+		 
 			RequestDispatcher dispatcher = 
 					getServletContext().getRequestDispatcher("/mastersp.jsp");
 			dispatcher.forward(request,response);
 			conn.close();
-			System.out.println("Disconnected from database");
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
+
 }

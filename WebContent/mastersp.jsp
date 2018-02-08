@@ -99,35 +99,8 @@
 		<form action="Search" method="POST">
 			<table>
 				<tr>
-					<td><label><b>SPItem ID</b></label> <!-- <input type="text"name="spmitemid" /> -->
-					<%
-    try{
-Class.forName("com.mysql.jdbc.Driver").newInstance();
-Connection connection = 
-         DriverManager.getConnection
-            ("jdbc:mysql://localhost:3306/digypromo?user=root&password=root");
-
-       Statement statement = connection.createStatement() ;
-
-       resultset =statement.executeQuery("select SPMItemID from spmitem_master") ;
-%>
-
-						<center>
-
-							<select name="lang" onClick="GetSelectedItem()" input =float:left; width: 182px;>
-								<%  while(resultset.next()){ %>
-								<option ></option>
-								<option ><%= resultset.getString(1)%></option>
-								<% } %>
-							</select>
-						</center> <%
-
-        }
-        catch(Exception e)
-        {
-             out.println("wrong entry"+e);
-        }
-%> </td>
+					<td><label><b>SPItem ID</b></label> <input type="text"name="spmitemid" /> 
+				 </td>
 					<td><label><b>SPItem Name</b></label> <input type="text"
 						name="spmitemname" /> </td>
 				</tr>
@@ -136,7 +109,7 @@ Connection connection =
 				</tr>
 			</table>
 
-			<input type="submit" name="submit" id="btnfetch" value="FETCH"
+			<input type="submit" name="submit" id="btnfetch" value="FETCH" onclick="CreateTableFromJSON()"
 				style="margin-left: 85px;" /> <input type="button" value="CANCEL"
 				style="margin-left: 65px;" />
 		</form>
@@ -150,7 +123,7 @@ Connection connection =
 			</tr>
 		</table>
 	</div>
-	<div class="result-box">
+	 <div class="result-box">
 		<table border="2" width="100%">
 			<tr>
 				<th>SPMItemkey</th>
@@ -164,12 +137,13 @@ Connection connection =
 				<th>EDIT</th>
 				<th>DELETE</th>
 			</tr>
+			
 			<%
                 int count = 0;
                 String color = "#F9EBB3";
                 if (request.getAttribute("empList") != null) {
                     ArrayList al = (ArrayList) request.getAttribute("empList");
-                    System.out.println(al);
+                  /*  System.out.println(al);  */
                     Iterator itr = al.iterator();
                     while (itr.hasNext()) {
  
@@ -191,6 +165,9 @@ Connection connection =
 				<td><a href="#">Edit</a> </td>
 				<td><a href="#">DELETE</a> </td>
 			</tr>
+			
+			
+			
 			<%
                     }
                 }
@@ -237,5 +214,6 @@ Connection connection =
 		</div>
 
 	</div>
+	
 </body>
 </html>
