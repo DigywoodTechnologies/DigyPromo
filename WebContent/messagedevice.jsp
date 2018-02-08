@@ -104,7 +104,7 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
  
   <div class="result-box">
  <table border="2" width="100%"  >  
-<tr><th>Device Id</th><th>DMessage_ID</th><th>Message Text</th><th>Sequence No.</th><th>Status</th><th>Actions</th></tr>
+<tr><th>Device Id</th><th>D_MESTID</th><th>Message Text</th><th>Sequence No.</th><th>Status</th><th>Actions</th></tr>
 <tr align="center">
      <td>1</td> 
      <td>1</td> 
@@ -139,7 +139,7 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
   <form>
   <table>
   <tr>
-        <td>ORG ID:
+        <td>ORGA ID:
     <input type="text" name="orgid"  /></td>
    
     <td>DEVICE ID:

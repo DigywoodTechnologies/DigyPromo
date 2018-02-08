@@ -51,10 +51,6 @@ div.scroll {
 			   	$('#content').load('../DigyPromo/devicemp.jsp');
 			     //alert("Thanks for visiting!");
 			   });
-		   $("#link4").click(function(){
-			   	$('#content').load('../DigyPromo/mastermp.jsp');
-			     //alert("Thanks for visiting!");
-			   });
 			
 		   $("#link6").click(function(){
 			   	$('#content').load('../DigyPromo/sideframe.jsp');

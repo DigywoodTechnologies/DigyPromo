@@ -64,20 +64,33 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 <body>
 <div class="after-box">
 <table border="0" width="100%" bgcolor="yellow">
-<tr><th>SCREENID:SCDEV01</th><th>FEEDER MASTER PANEL</th><th>USER:</th> <th>Date:<span id="date"></span></th></tr> </table></div>
+<tr><th>SCREENID:SCDEV01</th><th>DEVICE FEEDER PANEL</th><th>USER:</th> <th>Date:<span id="date"></span></th></tr> </table></div>
  <div class="form-style-8">
   <form>
   <table>
   <tr>
-   <td><b>MASTER_FEEDERID</b>
-   <input type="text" name="mfid" id="mmid"/></td>
+   <td><b>DEVICE ID</b>
+   <input type="text" name="did" id="did"/></td>
    
-   <td><b>MASTER FEED</b> 
-   <input type="text" name="mfeed" /></td> </tr>
-    <tr>
-    <td><b>MASTER FEEDER STATUS</b> 
-    <input type="text" name="mfeedstatus"  /></td>
+   <td><b>MASTER_REF(Y/N) </b> 
+   <input type="checkbox" name="mref" /></td> 
+   </tr>
+   <tr>
+    <td><b>DFEED_ID </b> 
+    <input type="text" name="dfeedid"  /></td>
     
+    <td><b>DFEED_SEQUENCE</b>
+    <input type="text" name="dfeedseq"  /></td>
+    </tr>
+    <tr>
+    <tr><td><b>MFEED_ID</b>
+    <input type="text" name="mfeedid"  /></td>
+    
+     <td><b>FEED</b>
+    <input type="text" name="feed"  /></td>
+    
+    <td><b>FEED_STATUS </b>
+    <input type="text" name="fstatus"  /></td>
     
     </tr>
    </table>
@@ -91,18 +104,25 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
  
   <div class="result-box">
  <table border="2" width="100%"  >  
-<tr><th>MFeed_ID</th><th>Feed Text</th><th>Status</th>
+<tr><th>Device Id</th><th>DFeed_ID</th><th>Feed Text</th><th>Sequence No.</th><th>Status</th><th>Actions</th></tr>
 <tr align="center">
      <td>1</td> 
-     <td>sp123</td> 
-     
-       <td>active</td></tr>
+     <td>1</td> 
+      <td>xyz</td> 
+      <td>123</td>
+       <td>active</td>
+       <td>do</td> 
+      </tr>
 
 <tr align="center">
-<td>2</td> 
-<td>sp456</td> 
+     <td>2</td> 
+     <td>6</td> 
+      <td>xyz</td> 
+      <td>123</td>
+       <td>inactive</td>
+       <td>do</td> 
+      </tr>
 
-<td>inactive</td></tr>
 </table> 
 </div>
 
@@ -118,26 +138,37 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
   <h2>ADD NEW FEED</h2>
   <form>
   <table>
-  <tr><td>ORG ID:
-    <input type="text" name="orgid" /></td>
-    
-    <td>FEED ID:
-    <input type="text" name="mid"  /></td>
+  <tr>
+        <td>ORGA ID:
+    <input type="text" name="orgid"  /></td>
+   
+    <td>DEVICE ID:
+    <input type="text" name="deviceid"  /></td>
     </tr>
     <tr>
-    <td>FEED TEXT:
-    <input type="text" name="mid"  /></td>
+    <td>MASTER REF(Y/N):
+    <input type="checkbox" name="masterref"  /></td>
+   <td>If Yes, MFEED ID:
+    <input type="text" name="mfeed"  /></td>
+    </tr>
+   <tr> 
+    <td>DFEED ID:
+    <input type="text" name="dfeedid"  /></td>
     
+   
     
+     <td>FEED TEXT:
+    <input type="text" name="feedtxt"  /></td>
+   </tr>
+   <tr>
+     <td>REMARKS:
+    <input type="text" name="remarks"  /></td>
+    </tr>
     
-    <td>STATUS:
+      <td>STATUS:
     <input type="text" name="status"  /></td>
     </tr>
-    <tr>
-    <td>REMARKS:
-    <input type="text" name="remarks"  /></td>
     
-    </tr>
     
     </table>
     

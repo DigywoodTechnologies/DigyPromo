@@ -75,7 +75,7 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
    <td><b>MASTER MESSAGE</b> 
    <input type="text" name="mmsg" /></td> </tr>
     <tr>
-    <td><b>MESSAGE STATUS</b> 
+    <td><b>MM_STATUS</b> 
     <input type="text" name="deviceid"  /></td>
     
     
@@ -118,7 +118,7 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
   <h2>ADD NEW MESSAGE</h2>
   <form>
   <table>
-  <tr><td>ORG ID:
+  <tr><td>ORGA ID:
     <input type="text" name="orgid" /></td>
     
     <td>MESSAGE ID:
