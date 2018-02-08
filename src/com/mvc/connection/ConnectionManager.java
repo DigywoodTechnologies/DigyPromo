@@ -8,7 +8,7 @@ public class ConnectionManager {
 	public static Connection createConnection()
 	 {
 	 Connection con = null;
-	 String url = "jdbc:mysql://localhost:3306/digypromo"; 
+	 String url = "jdbc:mysql://localhost:3307/digypromo"; 
 	 String username = "root"; 
 	 String password = "root"; 
 	 
